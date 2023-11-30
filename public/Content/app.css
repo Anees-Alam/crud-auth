@@ -1,0 +1,20 @@
+    body{    
+        height: 200px;     
+        background: linear-gradient(87.4deg, rgb(190, 227, 246) 1.9%, rgb(135, 225, 243) 49.7%, rgb(2, 230, 255) 100.5%);
+    }
+
+    main{
+        height: 160px;
+        text-align: center;
+        padding-top: 5%;
+        font-size: larger;
+        
+    }
+
+    div.row{
+        background-color: rgba(250, 193, 143, 0.727);
+        padding: 10px;
+        font-family: Verdana, sans-serif;
+        border-style: solid;
+        border-color: #ff0000;
+    }
