@@ -3,7 +3,7 @@
 <!-- Main Content -->
 <main class="container">
     <div class="row">
-        <div class="col-md-offset-3 col-md-10">
+        <div class="col-md-10 mx-auto">
             <h1><%= title %></h1>
             <% if(typeof displayName=='string' && displayName) { %>
                 <a href="/Groceries/add" class="btn btn-primary" role="button">
@@ -16,15 +16,15 @@
     <% if(typeof displayName=='string' && displayName) { %>
         <th class="text-center col-2">Item</th>
         <th class="text-center col-2">Cost</th>
-        <th class="text-center col-1">Quantity</th>
-        <th class="text-center col-5">Total</th>
+        <th class="text-center col-3">Quantity</th>
+        <th class="text-center col-3">Total</th>
         <th class="text-center col-1"></th>
         <th class="text-center col-1"></th>
     <% } else { %>
     <th class="text-center col-2">Item</th>
         <th class="text-center col-2">Cost</th>
-        <th class="text-center col-1">Quantity</th>
-        <th class="text-center col-6">Total</th>
+        <th class="text-center col-3">Quantity</th>
+        <th class="text-center col-3">Total</th>
         
     <% } %>
 
@@ -35,8 +35,8 @@
         <% if(typeof displayName=='string' && displayName) { %>
             <td class="text-center col-2"><%= BookList[count].Item %></td>
             <td class="text-center col-2"><%= BookList[count].Cost %></td>
-            <td class="text-center col-1"><%= BookList[count].Quantity %></td>
-            <td class="text-center col-5"><%= BookList[count].Total %></td>  
+            <td class="text-center col-3"><%= BookList[count].Quantity %></td>
+            <td class="text-center col-3"><%= BookList[count].Total %></td>  
             <td class="text-center col-1">
                 <a href="/Groceries/edit/<%= BookList[count]._id %>"
                     class="btn btn-primary btn-sm">
@@ -50,8 +50,8 @@
         <% } else { %>
             <td class="text-center col-2"><%= BookList[count].Item %></td>
             <td class="text-center col-2"><%= BookList[count].Cost %></td>
-            <td class="text-center col-1"><%= BookList[count].Quantity %></td>
-            <td class="text-center col-6"><%= BookList[count].Total %></td>
+            <td class="text-center col-3"><%= BookList[count].Quantity %></td>
+            <td class="text-center col-3"><%= BookList[count].Total %></td>
         
         <% } %>       
         </tr>
