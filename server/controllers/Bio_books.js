@@ -8,7 +8,8 @@ module.exports.DislayBooklist = async (req,res,next)=>{ //< Mark function as asy
        const BookList = await Book.find(); //< Use of await keyword
        res.render('book/list', {
           title: 'Grocery List', 
-          BookList: BookList
+          BookList: BookList,
+          displayName: req.user ? req.user.displayName:''
        });
     }catch(err){
        console.error(err);
@@ -23,7 +24,8 @@ module.exports.DislayBooklist = async (req,res,next)=>{ //< Mark function as asy
     try{
         res.render('book/add',
         {
-            title:'Add Book'
+            title:'Add Item',
+            displayName: req.user ? req.user.displayName:''
         })
     }
     catch(err)
@@ -45,7 +47,7 @@ module.exports.ProcessBook = async (req,res,next)=>{
             "Total": req.body.Total,
         });
         Book.create(newBook).then(() =>{
-            res.redirect('/bookslist')
+            res.redirect('/Groceries')
         })
     }
     catch(error){
@@ -64,6 +66,7 @@ module.exports.EditBook = async (req,res,next)=>{
     res.render('book/edit',
     {
         title:'Edit Item',
+        displayName: req.user ? req.user.displayName:'',
         Book:bookToEdit
     })
 }
@@ -87,7 +90,7 @@ module.exports.ProcessEditBook = (req,res,next)=>{
             "Total": req.body.Total,
         });
         Book.findByIdAndUpdate(id,updatedBook).then(()=>{
-            res.redirect('/bookslist')
+            res.redirect('/Groceries')
         });
     }
     catch(error){
@@ -104,7 +107,7 @@ module.exports.DeleteBook = (req,res,next)=>{
         let id = req.params.id;
         Book.deleteOne({_id:id}).then(() =>
         {
-            res.redirect('/bookslist')
+            res.redirect('/Groceries')
         })
     }
     catch(error){

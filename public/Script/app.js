@@ -10,7 +10,7 @@
                 if(!confirm('Are you sure?'))
                 {
                     event.preventDefault();
-                    window.location.assign('/bookslist');
+                    window.location.assign('/Groceries');
                 }
             })
         }

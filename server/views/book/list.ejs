@@ -6,7 +6,7 @@
         <div class="col-md-offset-3 col-md-10">
             <h1><%= title %></h1>
             <% if(typeof displayName=='string' && displayName) { %>
-                <a href="/bookslist/add" class="btn btn-primary" role="button">
+                <a href="/Groceries/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add Grocery Item </a>
             <br>
             <% } %>
@@ -18,7 +18,6 @@
         <th class="text-center col-2">Cost</th>
         <th class="text-center col-1">Quantity</th>
         <th class="text-center col-5">Total</th>
-        
         <th class="text-center col-1"></th>
         <th class="text-center col-1"></th>
     <% } else { %>
@@ -37,16 +36,15 @@
             <td class="text-center col-2"><%= BookList[count].Item %></td>
             <td class="text-center col-2"><%= BookList[count].Cost %></td>
             <td class="text-center col-1"><%= BookList[count].Quantity %></td>
-            <td class="text-center col-5"><%= BookList[count].Total %></td>
-            
+            <td class="text-center col-5"><%= BookList[count].Total %></td>  
             <td class="text-center col-1">
-                <a href="/bookslist/edit/<%= BookList[count]._id %>"
-                    class="btn btn-primary">
+                <a href="/Groceries/edit/<%= BookList[count]._id %>"
+                    class="btn btn-primary btn-sm">
                     <i class="fas fa-pencil-alt"></i> Edit </a>
             </td>
             <td class="text-center col-1">
-                <a href="/bookslist/delete/<%= BookList[count]._id %>"
-                    class="btn btn-danger">
+                <a href="/Groceries/delete/<%= BookList[count]._id %>"
+                    class="btn btn-danger btn-sm">
                     <i class="fas fa-trash-alt"></i> Delete </a>
             </td>
         <% } else { %>

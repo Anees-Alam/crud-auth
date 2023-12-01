@@ -56,7 +56,7 @@ let BooksRouter = require('../routes/Bio_books');
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/bookslist', BooksRouter);
+app.use('/Groceries', BooksRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
